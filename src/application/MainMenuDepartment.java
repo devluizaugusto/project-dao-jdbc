@@ -92,6 +92,28 @@ public class MainMenuDepartment {
 				
 				break;
 			}
+			
+			case 5: {
+				System.out.println("### ENTER DEPARTMENT ID FOR DELETE ###");
+				System.out.print("DEPARTMENT ID: ");
+				int id = sc.nextInt();
+				
+				departmentDao.deleteById(id);
+				
+				System.out.println("-----------------------------------------------------------");
+				System.out.println("DEPARTMENT DELETED!");
+				
+				break;
+			}
+
+			case 6: {
+				System.out.println("THANK YOU FOR USING OUR SERVICE!");
+				break;
+			}
+
+			default:
+				System.out.println("INVALID OPTION!");
+			}
 		}
 			System.out.println();
 
