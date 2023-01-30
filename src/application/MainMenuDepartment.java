@@ -48,6 +48,24 @@ public class MainMenuDepartment {
 					System.out.println("\n" + dep);
 				}
 			}
+			
+			case 3: {
+				System.out.println("### ENTER DEPARTMENT DATE FOR INSERT ###");
+				System.out.println();
+				System.out.print("DEPARTMENT NAME: ");
+				String name = sc.next();
+				
+				Department dep = new Department(null, name);
+				
+				departmentDao.insert(dep);
+				
+				System.out.println("------------------------------------------------------------");
+				System.out.println("DEPARTMENT INSERTED!" + "\n");
+				
+				System.out.println(dep);
+				
+				break;
+			}
 		}
 			System.out.println();
 
