@@ -60,7 +60,7 @@ public class Department implements Serializable{
 	
 	@Override
 	public String toString() {
-		return 	id
-				+ "\nDEPARTMENT NAME: " + name.toUpperCase();
+		return 	"DEPARTMENT ID: " + id + "\n"
+				+ "DEPARTMENT NAME: " + name;
 	}
 }

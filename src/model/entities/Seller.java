@@ -1,3 +1,4 @@
+
 package model.entities;
 
 import java.io.Serializable;
@@ -107,7 +108,7 @@ public class Seller implements Serializable{
 				+ "\nSELLER EMAIL: " + email
 				+ "\nSELLER BIRTH DATE: " + birthDate
 				+ "\nSELLER BASE SALARY: U$" + baseSalary
-				+ "\nSELLER DEPARTMENT ID: " + department;
+				+ "\n" + department;
 	}
 	
 }

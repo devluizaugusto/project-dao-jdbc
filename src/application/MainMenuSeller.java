@@ -12,7 +12,7 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
-public class Program {
+public class MainMenuSeller {
 
 	public static void main(String[] args) throws ParseException {
 		Locale.setDefault(Locale.US);
@@ -152,9 +152,22 @@ public class Program {
 				
 				System.out.println("----------------------------------------------------------");
 				
-				System.out.println("SELLER UPFATE!" + "\n");
+				System.out.println("SELLER UPDATE!" + "\n");
 				
 				System.out.println(seller);
+				
+				break;
+			}
+			
+			case 6: {
+				System.out.println("### ENTER SELLER ID FOR DELETE ###");
+				System.out.print("SELLER ID: ");
+				int id = sc.nextInt();
+				
+				sellerDao.deleteById(id);
+				
+				System.out.println("-----------------------------------------------------------");
+				System.out.println("SELLER DELETED!");
 				
 				break;
 			}
