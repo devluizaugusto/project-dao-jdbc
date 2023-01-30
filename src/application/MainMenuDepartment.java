@@ -41,68 +41,68 @@ public class MainMenuDepartment {
 
 				break;
 			}
-			
+
 			case 2: {
 				List<Department> list = departmentDao.findAll();
 				for (Department dep : list) {
 					System.out.println("\n" + dep);
 				}
 			}
-			
+
 			case 3: {
 				System.out.println("### ENTER DEPARTMENT DATE FOR INSERT ###");
 				System.out.println();
 				System.out.print("DEPARTMENT NAME: ");
 				String name = sc.next();
-				
+
 				Department dep = new Department(null, name);
-				
+
 				departmentDao.insert(dep);
-				
+
 				System.out.println("------------------------------------------------------------");
 				System.out.println("DEPARTMENT INSERTED!" + "\n");
-				
+
 				System.out.println(dep);
-				
+
 				break;
 			}
-			
+
 			case 4: {
 				System.out.println("### ENTER DEPARTMENT DATE FOR UPDATE ###");
-				
+
 				System.out.println();
 				System.out.print("ENTER DEPARTMENT ID: ");
 				int id = sc.nextInt();
-				
+
 				Department dep = departmentDao.findById(id);
-				
+
 				System.out.print("DEPARTMENT NAME: ");
 				sc.nextLine();
 				String name = sc.nextLine();
-				
+
 				dep.setName(name);
-				
+
 				departmentDao.update(dep);
-				
+
 				System.out.println("----------------------------------------------------------");
-				
+
 				System.out.println("DEPARTMENT UPDATE!" + "\n");
-				
+
 				System.out.println(dep);
-				
+
 				break;
 			}
-			
+
 			case 5: {
 				System.out.println("### ENTER DEPARTMENT ID FOR DELETE ###");
 				System.out.print("DEPARTMENT ID: ");
 				int id = sc.nextInt();
-				
+
 				departmentDao.deleteById(id);
-				
+
 				System.out.println("-----------------------------------------------------------");
 				System.out.println("DEPARTMENT DELETED!");
-				
+
 				break;
 			}
 
@@ -114,7 +114,7 @@ public class MainMenuDepartment {
 			default:
 				System.out.println("INVALID OPTION!");
 			}
-		}
+
 			System.out.println();
 
 			System.out.print("DO YOU WANT TO RETURN TO THE MAIN MENU: ");
@@ -125,4 +125,5 @@ public class MainMenuDepartment {
 
 		sc.close();
 	}
+
 }
