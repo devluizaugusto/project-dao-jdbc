@@ -61,16 +61,14 @@ public class Program {
 				System.out.println("--------------------------------------------------");
 
 				for (Seller obj : list) {
-					System.out.println();
-					System.out.println(obj);
+					System.out.println("\n" + obj);
 				}
 			}
 
 			case 3: {
 				List<Seller> list = sellerDao.findAll();
 				for (Seller obj : list) {
-					System.out.println();
-					System.out.println(obj);
+					System.out.println("\n" + obj);
 				}
 			}
 
@@ -91,8 +89,8 @@ public class Program {
 				
 				double baseSalary = sc.nextDouble();
 				System.out.print("SELLER DEPARTMENT ID: ");
-				
 				int sellerDepId = sc.nextInt();
+				
 				System.out.print("SELLER DEPARTMENT NAME: ");
 				String sellerDepName = sc.next();
 
@@ -102,10 +100,60 @@ public class Program {
 
 				sellerDao.insert(seller);
 				
-				System.out.println();
-				System.out.println("SELLER INSERTED!");
+				System.out.println("------------------------------------------------------------");
+				System.out.println("SELLER INSERTED!" + "\n");
+				
+				System.out.println(seller);
+				
+				break;
+			}
+			
+			case 5: {
+				System.out.println("### ENTER SELLER DATE FOR UPDATE ###");
 				
 				System.out.println();
+				System.out.print("ENTER SELLER ID: ");
+				int id = sc.nextInt();
+				
+				Seller seller = sellerDao.findById(id);
+				
+				System.out.print("SELLER NAME: ");
+				sc.nextLine();
+				String name = sc.nextLine();
+				
+				seller.setName(name);
+				
+				System.out.print("SELLER EMAIL: ");
+				String email = sc.next();
+				
+				seller.setEmail(email);
+
+				System.out.print("SELLER BITRH DATE(dd/MM/yyyy): ");
+				Date birthDate = sdf.parse(sc.next());
+				
+				seller.setBirthDate(birthDate);
+				
+				System.out.print("SELLER BASE SALARY: U$");
+				double baseSalary = sc.nextDouble();
+				
+				seller.setBaseSalary(baseSalary);
+				
+				System.out.print("SELLER DEPARTMENT ID: ");
+				int sellerDepId = sc.nextInt();
+				
+				seller.getDepartment().setId(sellerDepId);
+				
+				System.out.print("SELLER DEPARTMENT NAME: ");
+				String sellerDepName = sc.next();
+				
+				seller.getDepartment().setName(sellerDepName);
+				
+				sellerDao.update(seller);
+				
+				System.out.println("----------------------------------------------------------");
+				
+				System.out.println("SELLER UPFATE!" + "\n");
+				
 				System.out.println(seller);
 				
 				break;
