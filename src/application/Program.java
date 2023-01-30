@@ -58,10 +58,19 @@ public class Program {
 				System.out.println("--------------------------------------------------");
 				
 				for(Seller obj : list) {
-					System.out.println(obj);
 					System.out.println();
+					System.out.println(obj);	
 				}
 			}
+			
+			case 3: {
+				List<Seller> list = sellerDao.findAll();
+				for(Seller obj : list) {
+					System.out.println();
+					System.out.println(obj);
+				}
+			}
+			
 			
 			case 7: {
 				System.out.println("THANK YOU FOR USING OUR SERVICE!");
