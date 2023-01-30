@@ -66,6 +66,32 @@ public class MainMenuDepartment {
 				
 				break;
 			}
+			
+			case 4: {
+				System.out.println("### ENTER DEPARTMENT DATE FOR UPDATE ###");
+				
+				System.out.println();
+				System.out.print("ENTER DEPARTMENT ID: ");
+				int id = sc.nextInt();
+				
+				Department dep = departmentDao.findById(id);
+				
+				System.out.print("DEPARTMENT NAME: ");
+				sc.nextLine();
+				String name = sc.nextLine();
+				
+				dep.setName(name);
+				
+				departmentDao.update(dep);
+				
+				System.out.println("----------------------------------------------------------");
+				
+				System.out.println("DEPARTMENT UPDATE!" + "\n");
+				
+				System.out.println(dep);
+				
+				break;
+			}
 		}
 			System.out.println();
 
