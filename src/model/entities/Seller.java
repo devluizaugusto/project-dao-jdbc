@@ -106,7 +106,7 @@ public class Seller implements Serializable{
 				+ "\nSELLER NAME: " + name
 				+ "\nSELLER EMAIL: " + email
 				+ "\nSELLER BIRTH DATE: " + birthDate
-				+ "\nSELLER BASE SALARY: " + baseSalary
+				+ "\nSELLER BASE SALARY: U$" + baseSalary
 				+ "\nSELLER DEPARTMENT ID: " + department;
 	}
 	
